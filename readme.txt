@@ -41,6 +41,6 @@ Shorcode:-
     3. Create a page through the \'Pages\' menu and insert the shortcode [VINFinder] into the text and update the page.
 
 == Screenshots ==
-1. Add shortcode [VINFinder] in page
-2. Insert VIN NUmber
-3. Resurt of VIN decoder.
+1. 1.png
+2. 2.png
+3. 3.png
