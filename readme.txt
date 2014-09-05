@@ -41,6 +41,6 @@ Shorcode:-
     3. Create a page through the \'Pages\' menu and insert the shortcode [VINFinder] into the text and update the page.
 
 == Screenshots ==
-1. 1.png
-2. 2.png
-3. 3.png
+1. 1st Screen-shot
+2. 2nd Screen-shot
+3. 3rd Screen-shot
