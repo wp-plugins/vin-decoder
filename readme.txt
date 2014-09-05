@@ -16,11 +16,11 @@ VIN stands for Vehicle Identification Number, is a unique 17-digit VIN used by a
 1. Door frame of the front doors
 2. Dash near the windshield
 3. Engine (front of engine)
-4. Car’s firewall
+4. Cars firewall
 5. Left-hand inner wheel arch
 6. Steering wheel or steering column
 7. Radiator support bracket
-8. Car’s title, RC Book, etc..
+8. Cars title, RC Book, etc..
 
 VIN check is a very important step before buying a used car. Often, thieves replace the VIN of a stolen car with a similar & legally registered vehicle. So, a free VIN check can save you from buying such stolen cars.
 
