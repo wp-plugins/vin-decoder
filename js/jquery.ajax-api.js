@@ -1,0 +1,92 @@
+function get_vin(){
+	var vinnumber=jQuery("#vin_number").val();
+	jQuery("#loader").show();
+	if(vinnumber=="")
+		{
+			jQuery("#vin_Info").html("<span style='color:red;font-weight: bold;margin-left: 6px;'>Please Enter Vehicle Identification Number(VIN)</span>");
+		}
+	else
+		{
+			var vin_len = vinnumber.length;
+			var lastfourChar=vinnumber.slice(-4);
+			if(vin_len!=17 || isNaN(lastfourChar) == true)
+				{
+					jQuery("#loader").hide();					
+					jQuery("#vin_Info").html("<span style='color:red;font-weight: bold;margin-left: 6px;'>The VIN is incorrect. It must be 17 characters</span>");	
+				
+				}
+			else {
+			var urls=jQuery("#urls").val();
+			var htmldata='';
+			var urls = urls+"?vin="+vinnumber;
+			jQuery.ajax({ 
+			 url:urls,
+			 success:function(data){ 
+			 jQuery("#loader").hide();
+				jQuery.each(data.styleHolder,function(i,data){
+						htmldata +="<div class='expands expand0'><span style='cursor:pointer;' onclick=\"expandable(0)\"><strong>VIN Details</strong></span>";
+						htmldata +="<ul>";
+							htmldata +="<li><strong>VIN Number :</strong>" +vinnumber+"</li>";
+							var WMI = vinnumber.substr(0, 3);
+							var VDS = vinnumber.substr(3, 8);
+							htmldata +="<li><strong>WMI :</strong>" +WMI+"</li>";
+							htmldata +="<li><strong>VDS :</strong>" +VDS+"</li>";
+							htmldata +="<li><strong>Name :</strong>" +data.makeName+"</li>";
+							htmldata +="<li><strong>Make Year :</strong>" +data.year+"</li>";
+						htmldata +="</ul>";
+						htmldata +="</div>";
+						
+						htmldata +="<div class='expands expand1'><span style='cursor:pointer;' onclick=\"expandable(1)\"><strong>Technical Information</strong></span>";
+						htmldata +="<ul style='display:none'>";
+							htmldata +="<li><strong>Transmission Type :</strong>" +data.transmissionType+"</li>";
+							htmldata +="<li><strong>Engine Type :</strong>" +data.engineType+"</li>";
+							htmldata +="<li><strong>Engine Compressor Type :</strong>" +data.engineCompressorType+"</li>";
+							htmldata +="<li><strong>Engine Fuel Type :</strong>" +data.engineFuelType+"</li>";
+							htmldata +="<li><strong>Engine Cylinder Type :</strong>" +data.engineCylinder+"</li>";
+							htmldata +="<li><strong>Engine Size :</strong>" +data.engineSize+"</li>";
+							htmldata +="<li><strong>Driveline :</strong>" +data.attributeGroups.DRIVE_TYPE.attributes.DRIVEN_WHEELS.value+"</li>";
+							htmldata +="<li><strong>Steering :</strong>" +data.attributeGroups.STEERING.attributes.POWER_STEERING.value+"</li>";
+						htmldata +="</ul>";
+						htmldata +="</div>";
+						
+						
+						htmldata +="<div class='expands expand2'><span style='cursor:pointer;' onclick=\"expandable(2)\"><strong>Brake System</strong></span>";
+						htmldata +="<ul style='display:none'>";
+							htmldata +="<li><strong>Front Brake Width:</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH.value+"</li>";
+							htmldata +="<li><strong>Brake Front :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_TYPE.value+"</li>";
+							htmldata +="<li><strong>Brake Rear :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.REAR_BRAKE_TYPE.value+"</li>";
+						htmldata +="</ul>";
+						htmldata +="</div>";
+						
+						htmldata +="<div class='expands expand3'><span style='cursor:pointer;' onclick=\"expandable(3)\"><strong>Vehicle Details</strong></span>";
+						htmldata +="<ul style='display:none'>";
+							htmldata +="<li><strong>Model Id :</strong>" +data.modelId+"</li>";
+							htmldata +="<li><strong>Model Name :</strong>" +data.modelName+"</li>";
+							htmldata +="<li><strong>PRIMARY BODY TYPE :</strong>" +data.categories.PRIMARY_BODY_TYPE[0]+"</li>";
+							htmldata +="<li><strong>Body Style :</strong>" +data.attributeGroups.STYLE_INFO.attributes.VEHICLE_STYLE.value+"</li>";
+							htmldata +="<li><strong>Vehicle Size :</strong>" +data.attributeGroups.STYLE_INFO.attributes.VEHICLE_SIZE_CLASS.value+"</li>";
+							htmldata +="<li><strong>Model Year :</strong>" +data.year+"</li>";
+							htmldata +="<li><strong>Doors :</strong>" +data.attributeGroups.DOORS.attributes.NUMBER_OF_DOORS.value+"</li>";
+							htmldata +="<li><strong>Manufactured in :</strong>" +data.attributeGroups.STYLE_INFO.attributes.WHERE_BUILT.value+"</li>";
+							
+						htmldata +="</ul>";
+						htmldata +="</div>";
+										  
+					  jQuery("#vin_Info").html("<h2>Result of VIN decoding process (No guarantee)</h2>"+htmldata);
+					   
+				});
+			  },
+			  error: function(data) {
+				 
+					 jQuery("#vin_Info").html("The VIN is incorrect. It must be 17 characters");
+				 
+			  }
+		   });
+			}
+		}
+}
+function expandable(id){
+	
+ jQuery(".expand" + id +" ul").slideToggle();
+ 
+}
