@@ -13,18 +13,21 @@ VIN Decoder is a WordPress plugin that provides detailed information about cars 
 == Description ==
 VIN stands for Vehicle Identification Number, is a unique 17-digit VIN used by automotive industry to help identify individual motor vehicles & its configuration. Its a universal VIN decoder supporting cars by Brands and Manufacturers like Ford, Fiat, Mazda, Mercedes-Benz, BMW, Hyundai, Volvo, Toyota, Chevrolet, Nissan, Jeep, Honda, Mitsubishi and many more. Ususally, you will find the VIN of a vehicle on:
 
-    Door frame of the front doors
-    Dash near the windshield
-    Engine (front of engine)
-    Car’s firewall
-    Left-hand inner wheel arch
-    Steering wheel or steering column
-    Radiator support bracket
-    Car’s title, RC Book, etc..
+1. Door frame of the front doors
+2. Dash near the windshield
+3. Engine (front of engine)
+4. Car’s firewall
+5. Left-hand inner wheel arch
+6. Steering wheel or steering column
+7. Radiator support bracket
+8. Car’s title, RC Book, etc..
 
 VIN check is a very important step before buying a used car. Often, thieves replace the VIN of a stolen car with a similar & legally registered vehicle. So, a free VIN check can save you from buying such stolen cars.
 
 The working of VIN Decoder Plugin is very simply. Just enter the VIN of your vehicle, and the VIN decoder plugin will fetch & segregate all the basic information about your car in sections like VIN Info, Engine Information, Price Information, Brake System & Style Info of the vehicle.
+
+Shorcode:- 
+[VINFinder] 
 
 == Installation ==
 1. Upload the full directory into your wp-content/plugins directory.
