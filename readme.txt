@@ -26,7 +26,7 @@ VIN check is a very important step before buying a used car. Often, thieves repl
 
 The working of VIN Decoder Plugin is very simply. Just enter the VIN of your vehicle, and the VIN decoder plugin will fetch & segregate all the basic information about your car in sections like VIN Info, Engine Information, Price Information, Brake System & Style Info of the vehicle.
 
-Shorcode:- 
+Shortcode:- 
 [VINFinder] 
 
 == Installation ==
