@@ -38,23 +38,50 @@ function get_vin(){
 						
 						htmldata +="<div class='expands expand1'><span style='cursor:pointer;' onclick=\"expandable(1)\"><strong>Technical Information</strong></span>";
 						htmldata +="<ul style='display:none'>";
+						if(typeof(data.transmissionType) != "undefined"){
 							htmldata +="<li><strong>Transmission Type :</strong>" +data.transmissionType+"</li>";
+							}
+							if(typeof(data.engineType) != "undefined"){
 							htmldata +="<li><strong>Engine Type :</strong>" +data.engineType+"</li>";
+							}
+							if(typeof(data.engineCompressorType) != "undefined"){
 							htmldata +="<li><strong>Engine Compressor Type :</strong>" +data.engineCompressorType+"</li>";
+							}
+							if(typeof(data.engineFuelType) != "undefined"){
 							htmldata +="<li><strong>Engine Fuel Type :</strong>" +data.engineFuelType+"</li>";
+							}
+							if(typeof(data.engineCylinder) != "undefined"){
 							htmldata +="<li><strong>Engine Cylinder Type :</strong>" +data.engineCylinder+"</li>";
+							}
+							if(typeof(data.engineSize) != "undefined"){
 							htmldata +="<li><strong>Engine Size :</strong>" +data.engineSize+"</li>";
-							htmldata +="<li><strong>Driveline :</strong>" +data.attributeGroups.DRIVE_TYPE.attributes.DRIVEN_WHEELS.value+"</li>";
-							htmldata +="<li><strong>Steering :</strong>" +data.attributeGroups.STEERING.attributes.POWER_STEERING.value+"</li>";
+							}
+							if(typeof(data.attributeGroups.DRIVE_TYPE) != "undefined"){
+								if(typeof(data.attributeGroups.DRIVE_TYPE.attributes.DRIVEN_WHEELS) != "undefined"){
+									htmldata +="<li><strong>Driveline :</strong>" +data.attributeGroups.DRIVE_TYPE.attributes.DRIVEN_WHEELS.value+"</li>";
+								}
+							}
+							if(typeof(data.attributeGroups.STEERING) != "undefined"){
+								if(typeof(data.attributeGroups.STEERING.attributes.POWER_STEERING) != "undefined"){
+									htmldata +="<li><strong>Steering :</strong>" +data.attributeGroups.STEERING.attributes.POWER_STEERING.value+"</li>";
+								}
+							}
 						htmldata +="</ul>";
 						htmldata +="</div>";
 						
 						
 						htmldata +="<div class='expands expand2'><span style='cursor:pointer;' onclick=\"expandable(2)\"><strong>Brake System</strong></span>";
 						htmldata +="<ul style='display:none'>";
-							htmldata +="<li><strong>Front Brake Width:</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH.value+"</li>";
-							htmldata +="<li><strong>Brake Front :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_TYPE.value+"</li>";
-							htmldata +="<li><strong>Brake Rear :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.REAR_BRAKE_TYPE.value+"</li>";
+							ldata +="<ul style='display:none'>";
+								if(typeof(data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH) != "undefined"){
+									htmldata +="<li><strong>Front Brake Width:</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH.value+"</li>";
+								}
+								if(typeof(data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_TYPE) != "undefined"){
+									htmldata +="<li><strong>Brake Front :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_TYPE.value+"</li>";
+								}
+								if(typeof(data.attributeGroups.BRAKE_SYSTEM.attributes.REAR_BRAKE_TYPE) != "undefined"){
+									htmldata +="<li><strong>Brake Rear :</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.REAR_BRAKE_TYPE.value+"</li>";
+								}
 						htmldata +="</ul>";
 						htmldata +="</div>";
 						
@@ -63,11 +90,19 @@ function get_vin(){
 							htmldata +="<li><strong>Model Id :</strong>" +data.modelId+"</li>";
 							htmldata +="<li><strong>Model Name :</strong>" +data.modelName+"</li>";
 							htmldata +="<li><strong>PRIMARY BODY TYPE :</strong>" +data.categories.PRIMARY_BODY_TYPE[0]+"</li>";
+							if(typeof(data.attributeGroups.STYLE_INFO.attributes.VEHICLE_STYLE) != "undefined"){
 							htmldata +="<li><strong>Body Style :</strong>" +data.attributeGroups.STYLE_INFO.attributes.VEHICLE_STYLE.value+"</li>";
+							}
+							if(typeof(data.attributeGroups.STYLE_INFO.attributes.VEHICLE_SIZE_CLASS) != "undefined"){
 							htmldata +="<li><strong>Vehicle Size :</strong>" +data.attributeGroups.STYLE_INFO.attributes.VEHICLE_SIZE_CLASS.value+"</li>";
+							}
 							htmldata +="<li><strong>Model Year :</strong>" +data.year+"</li>";
-							htmldata +="<li><strong>Doors :</strong>" +data.attributeGroups.DOORS.attributes.NUMBER_OF_DOORS.value+"</li>";
-							htmldata +="<li><strong>Manufactured in :</strong>" +data.attributeGroups.STYLE_INFO.attributes.WHERE_BUILT.value+"</li>";
+							if(typeof(data.attributeGroups.DOORS.attributes.NUMBER_OF_DOORS) != "undefined"){
+								htmldata +="<li><strong>Doors :</strong>" +data.attributeGroups.DOORS.attributes.NUMBER_OF_DOORS.value+"</li>";
+							}
+							if(typeof(data.attributeGroups.STYLE_INFO.attributes.WHERE_BUILT) != "undefined"){
+								htmldata +="<li><strong>Manufactured in :</strong>" +data.attributeGroups.STYLE_INFO.attributes.WHERE_BUILT.value+"</li>";
+							}
 							
 						htmldata +="</ul>";
 						htmldata +="</div>";
