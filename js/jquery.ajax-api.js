@@ -69,10 +69,10 @@ function get_vin(){
 						htmldata +="</ul>";
 						htmldata +="</div>";
 						
-						
+						if(typeof(data.attributeGroups.BRAKE_SYSTEM) != "undefined"){
 						htmldata +="<div class='expands expand2'><span style='cursor:pointer;' onclick=\"expandable(2)\"><strong>Brake System</strong></span>";
 						htmldata +="<ul style='display:none'>";
-							ldata +="<ul style='display:none'>";
+							htmldata +="<ul style='display:none'>";
 								if(typeof(data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH) != "undefined"){
 									htmldata +="<li><strong>Front Brake Width:</strong>" +data.attributeGroups.BRAKE_SYSTEM.attributes.FRONT_BRAKE_WIDTH.value+"</li>";
 								}
@@ -84,6 +84,7 @@ function get_vin(){
 								}
 						htmldata +="</ul>";
 						htmldata +="</div>";
+						}
 						
 						htmldata +="<div class='expands expand3'><span style='cursor:pointer;' onclick=\"expandable(3)\"><strong>Vehicle Details</strong></span>";
 						htmldata +="<ul style='display:none'>";
