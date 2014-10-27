@@ -3,7 +3,7 @@
  * Plugin Name: VIN Decoder
  * Plugin URI: http://www.vijaywebsolutions.com/
  * Description: A plugin that helps to find the information through vin number.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Vijay Web Solutions
  * Author URI: http://www.vijaywebsolutions.com/
  * License: GPL2
