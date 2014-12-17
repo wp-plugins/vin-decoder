@@ -3,8 +3,8 @@ Contributors: vwsajay,ajay.sisodiya
 Tags: VIN Check, VIN Decoder,Vehicle Identification Number,Vehicle Identification Number Check,Vehicle History Check,VIN Decoder Plugin,VIN Plugin,Free VIN Decoder, Free VIN Check,Free VIN Plugin, VIN Number Decoder, Universal VIN Decoder,VIN Checker, BMW VIN Decoder, Chevrolet VIN Decoder, Honda VIN Decoder, Mercedes-Benz VIN Decoder, Nissan VIN Decoder, Toyota VIN Decoder, Volkswagen VIN Decoder, Audi VIN Decoder, Jaguar VIN Decoder, Mitsubishi VIN Decoder
 Donate link: http://www.vijaywebsolutions.com/project-view/vin-decoder
 Requires at least: 1.0
-Tested up to: 3.9.2
-Stable tag: 3.9.2
+Tested up to: 4.1
+Stable tag: 4.1
 License: GPL2
 License URI: http://www.vijaywebsolutions.com
 
