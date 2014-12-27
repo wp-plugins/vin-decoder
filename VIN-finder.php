@@ -42,7 +42,7 @@ function vin_finder(){
 <div id="vin_Info">
 </div>
 
-</div>
+
 <?php  
 }
 ?>
