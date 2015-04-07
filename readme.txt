@@ -3,8 +3,8 @@ Contributors: vwsajay,ajay.sisodiya
 Tags: VIN Check, VIN Decoder,Vehicle Identification Number,Vehicle Identification Number Check,Vehicle History Check,VIN Decoder Plugin,VIN Plugin,Free VIN Decoder, Free VIN Check,Free VIN Plugin, VIN Number Decoder, Universal VIN Decoder,VIN Checker, BMW VIN Decoder, Chevrolet VIN Decoder, Honda VIN Decoder, Mercedes-Benz VIN Decoder, Nissan VIN Decoder, Toyota VIN Decoder, Volkswagen VIN Decoder, Audi VIN Decoder, Jaguar VIN Decoder, Mitsubishi VIN Decoder
 Donate link: http://www.vijaywebsolutions.com/project-view/vin-decoder
 Requires at least: 1.0
-Tested up to: 4.0.1
-Stable tag: 4.0.1
+Tested up to: 4.1.1
+Stable tag: 4.1.1
 License: GPL2
 License URI: http://www.vijaywebsolutions.com
 
@@ -21,6 +21,7 @@ VIN stands for Vehicle Identification Number, is a unique 17-digit VIN used by a
 6. Steering wheel or steering column
 7. Radiator support bracket
 8. Cars title, RC Book, etc..
+9. Images of vehicle(version 1.0.2)
 
 VIN check is a very important step before buying a used car. Often, thieves replace the VIN of a stolen car with a similar & legally registered vehicle. So, a free VIN check can save you from buying such stolen cars.
 
@@ -44,3 +45,4 @@ Shortcode:-
 1. 1st Screen-shot
 2. 2nd Screen-shot
 3. 3rd Screen-shot
+3. 4th Screen-shot

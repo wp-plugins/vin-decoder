@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+/* Styles the thumbnail */
+
+a.lightbox img {
+height: 150px;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+margin: 20px;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
+/*background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);*/
+    opacity: 0;
+    position: fixed;
+    top: -100%;
+    width: 50%;
+	height: 550px;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
+	 background: none repeat scroll 0 0 white;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    height: 35px;
+    position:relative;
+    right: 0;
+	float: right;
+	text-decoration: none;
+    top: -80px;
+    width: 29px;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
+    background: none repeat scroll 0 0 black;
+    content: "";
+    display: block;
+    height: 18px;
+    left: 15px;
+    position: absolute;
+    top: 10px;
+    transform: rotate(45deg);
+    width: 1px;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+    background: none repeat scroll 0 0 black;
+    content: "";
+    display: block;
+    height: 18px;
+    left: 15px;
+    position: absolute;
+    top: 10px;
+    transform: rotate(-45deg);
+    width: 1px;
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target:target {
+opacity: 1;
+top: 12%;
+bottom: 0;
+left:25%;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 12px;
+}
+

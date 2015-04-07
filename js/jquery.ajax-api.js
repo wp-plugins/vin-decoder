@@ -107,22 +107,32 @@ function get_vin(){
 							
 						htmldata +="</ul>";
 						htmldata +="</div>";
-										  
+						if(typeof(data.subModels) != "undefined"){var img_urls=jQuery("#img_urls").val();if(typeof(data.subModels[0]) != "undefined"){var img_urls = img_urls+"?styleIds="+data.subModels[0]['styleIds'][0];}else if(typeof(data.styleIds[0]) != "undefined"){var img_urls = img_urls+"?styleIds="+data.styleIds[0];}
+						jQuery.ajax({ 
+							 url:img_urls,
+							 success:function(response){ 
+								 htmldata +="<div class='expands expand21'><span style='cursor:pointer;' onclick=\"expandable(21)\"><strong>Images</strong></span>";
+								 htmldata +="<ul style='display:none'>";
+								 jQuery.each(response,function(i,response){
+									var str = response['id'];
+									var res = str.substring(9);
+									htmldata +="<li style='list-style: outside none none;padding: 0;border-bottom: none;font-size: 14px;margin: 0;' id='images'><a class='lightbox' href='#light_box"+i+"'><img src='http://media.ed.edmunds-media.com"+ res +"_150.jpg' style='display: block;width: 180px;float: left;margin: 10px;' /></a></li>";
+										htmldata +="<div class='lightbox-target' id='light_box"+i+"'><img src='http://media.ed.edmunds-media.com"+ res +"_500.jpg' width='815px'/><a class='lightbox-close' href='#images'></a></div>";	
+								 });
+								 htmldata +="</ul>";
+								 htmldata +="</div>";
+								 jQuery("#vin_Info").html("<h2>Result of VIN decoding process (No guarantee)</h2>"+htmldata);
+						    }
+						});
+					}				  
 					  jQuery("#vin_Info").html("<h2>Result of VIN decoding process (No guarantee)</h2>"+htmldata);
-					   
 				});
 			  },
-			  error: function(data) {
-				 
+			  error: function(data) {				 
 					 jQuery("#vin_Info").html("The VIN is incorrect. It must be 17 characters");
-				 
-			  }
+				  }
 		   });
-			}
+		}
 		}
 }
-function expandable(id){
-	
- jQuery(".expand" + id +" ul").slideToggle();
- 
-}
+function expandable(id){jQuery(".expand" + id +" ul").slideToggle();}
